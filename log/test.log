@@ -65,3 +65,216 @@ Processing by ProductsController#update as HTML
 Redirected to http://test.host/products/980190962
 Completed 302 Found in 13ms (ActiveRecord: 0.6ms)
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (54.6ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "products" ("price", "updated_at", "title", "image_url", "description", "created_at", "id") VALUES (9.99, '2012-04-24 09:16:06', 'MyString', 'MyString', 'MyText', '2012-04-24 09:16:06', 298486374)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "products" ("price", "updated_at", "title", "image_url", "description", "created_at", "id") VALUES (9.99, '2012-04-24 09:16:06', 'MyString', 'MyString', 'MyText', '2012-04-24 09:16:06', 980190962)
+  [1m[36m (2636.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Load (0.8ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "products" 
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"price"=>"9.99", "title"=>"MyString", "description"=>"MyText", "image_url"=>"MyString"}}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'MyString' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (24.0ms)
+  Rendered products/new.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 1472ms (Views: 969.8ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "products" 
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Load (0.6ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "products" 
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/products
+Completed 302 Found in 15ms (ActiveRecord: 1.7ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products" [0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered products/_form.html.erb (20.2ms)
+Completed 200 OK in 452ms (Views: 447.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT "products".* FROM "products" [0m
+Completed 200 OK in 168ms (Views: 163.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (17.9ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 63ms (Views: 58.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ProductsController#update as HTML
+  Parameters: {"product"=>{"price"=>"9.99", "title"=>"MyString", "description"=>"MyText", "image_url"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE ("products"."title" = 'MyString' AND "products"."id" != 980190962) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered products/_form.html.erb (23.3ms)
+Completed 200 OK in 61ms (Views: 33.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.3ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (3.3ms)[0m  [1mINSERT INTO "products" ("price", "description", "title", "id", "updated_at", "created_at", "image_url") VALUES (9.99, 'MyText', 'MyString', 298486374, '2012-04-24 09:56:11', '2012-04-24 09:56:11', 'MyString')[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO "products" ("price", "description", "title", "id", "updated_at", "created_at", "image_url") VALUES (9.99, 'MyText', 'MyString', 980190962, '2012-04-24 09:56:11', '2012-04-24 09:56:11', 'MyString')
+  [1m[36m (696.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mProduct Load (1.1ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "products" 
+Processing by ProductsController#create as HTML
+  Parameters: {"product"=>{"title"=>"Lorem Impsum", "description"=>"Wibbles are fun!", "price"=>"19.95", "image_url"=>"lorem.jpg"}}
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'Lorem Impsum' LIMIT 1
+  [1m[36mSQL (445.3ms)[0m  [1mINSERT INTO "products" ("created_at", "description", "image_url", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Apr 2012 09:56:16 UTC +00:00], ["description", "Wibbles are fun!"], ["image_url", "lorem.jpg"], ["price", #<BigDecimal:b45b3cf4,'0.1995E2',8(8)>], ["title", "Lorem Impsum"], ["updated_at", Tue, 24 Apr 2012 09:56:16 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/products/980190963
+Completed 302 Found in 520ms (ActiveRecord: 446.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products" [0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "products" [0m
+Processing by ProductsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "products" WHERE "products"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed 302 Found in 12ms (ActiveRecord: 1.6ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "products" 
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered products/_form.html.erb (82.1ms)
+Completed 200 OK in 1458ms (Views: 1452.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Load (0.5ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ProductsController#index as HTML
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products" 
+Completed 200 OK in 872ms (Views: 866.4ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (24.1ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.4ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 443ms (Views: 438.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.3ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ProductsController#update as HTML
+  Parameters: {"id"=>"980190962", "product"=>{"title"=>"Lorem Impsum", "description"=>"Wibbles are fun!", "price"=>"19.95", "image_url"=>"lorem.jpg"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE ("products"."title" = 'Lorem Impsum' AND "products"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  UPDATE "products" SET "image_url" = 'lorem.jpg', "description" = 'Wibbles are fun!', "price" = 19.95, "title" = 'Lorem Impsum', "updated_at" = '2012-04-24 09:56:20.358600' WHERE "products"."id" = 980190962
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/980190962
+Completed 302 Found in 24ms (ActiveRecord: 1.7ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.1ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO "products" ("title", "created_at", "image_url", "id", "description", "updated_at", "price") VALUES ('MyString', '2012-04-24 10:07:01', 'MyString', 298486374, 'MyText', '2012-04-24 10:07:01', 9.99)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "products" ("title", "created_at", "image_url", "id", "description", "updated_at", "price") VALUES ('MyString', '2012-04-24 10:07:01', 'MyString', 980190962, 'MyText', '2012-04-24 10:07:01', 9.99)
+  [1m[36m (1338.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mProduct Exists (0.5ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.2ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.8ms)[0m  [1mINSERT INTO "products" ("image_url", "id", "description", "price", "updated_at", "title", "created_at") VALUES ('MyString', 298486374, 'MyText', 9.99, '2012-04-24 10:46:48', 'MyString', '2012-04-24 10:46:48')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "products" ("image_url", "id", "description", "price", "updated_at", "title", "created_at") VALUES ('MyString', 980190962, 'MyText', 9.99, '2012-04-24 10:46:48', 'MyString', '2012-04-24 10:46:48')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "products" ("image_url", "id", "description", "price", "updated_at", "title", "created_at") VALUES ('ruby.png', 207281424, 'Ruby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.', 49.5, '2012-04-24 10:46:48', 'programming Ruby 1.9', '2012-04-24 10:46:48')[0m
+  [1m[35m (3009.5ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.6ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.4ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Exists (0.4ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (1.1ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 207281424]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'programming Ruby 1.9' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.8ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My book Title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (1.1ms)[0m  DELETE FROM "products"
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO "products" ("id", "image_url", "created_at", "updated_at", "title", "price", "description") VALUES (207281424, 'ruby.png', '2012-04-24 10:48:29', '2012-04-24 10:48:29', 'programming Ruby 1.9', 49.5, 'Ruby is the fastest growing and most exciting dynamic language out there. If you need to get working programs delivered fast, you should add Ruby to your toolbox.')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "products" ("id", "image_url", "created_at", "updated_at", "title", "price", "description") VALUES (980190962, 'MyString', '2012-04-24 10:48:29', '2012-04-24 10:48:29', 'MyString', 9.99, 'MyText')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO "products" ("id", "image_url", "created_at", "updated_at", "title", "price", "description") VALUES (298486374, 'MyString', '2012-04-24 10:48:29', '2012-04-24 10:48:29', 'MyString', 9.99, 'MyText')[0m
+  [1m[35m (450.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.6ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36mProduct Exists (0.3ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.4ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My Book Title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mProduct Exists (0.4ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = '' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Load (0.7ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", 207281424]]
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'programming Ruby 1.9' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mProduct Exists (0.4ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My book Title' LIMIT 1
+  [1m[36mProduct Exists (0.5ms)[0m  [1mSELECT 1 FROM "products" WHERE "products"."title" = 'My book Title' LIMIT 1[0m
+  [1m[35mProduct Exists (0.3ms)[0m  SELECT 1 FROM "products" WHERE "products"."title" = 'My book Title' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
