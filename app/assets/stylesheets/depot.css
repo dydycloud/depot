@@ -12,7 +12,7 @@
 
 #store h1 {
         font:  150% sans-serif;
-        color: #226;
+        color: #40A497;
         border-bottom: 3px dotted #77d;
 }
 
@@ -88,7 +88,7 @@
 #store .entry h3 {
  margin-top: 0;
  margin-bottom: 2px;
- color: #227;
+ color: #40A497;
 }
 
 #store .entry p {
@@ -106,7 +106,41 @@
 }
 
 #store .entry  .price {
-  color: #44a;
+  color: #40A497;
   font-weight: bold;
   margin-right: 2em;
+}
+
+#banner {
+  background: #40A497;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #fff;
+  text-align: center;
+}
+#banner img {
+  float: left;
+}
+#columns {
+  background: #40A497;
+}
+#main {
+  margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: #40A497;
+}
+#side a {
+  color: #fff;
+  font-size: small;
 }
